@@ -1,38 +1,183 @@
 .robot-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50vw;
+  height: 40vh;
+  transform: translate(-50%, -50%);
 }
 
 .robot-face-shape {
+  width: 600px;
+  height: 400px;
+  border: 10px double gold;
+  border-radius: 60px;
+  background: slategray;
+  z-index: 1;
 }
 
 .robot-eye-left {
+  width: 90px;
+  height: 120px;
+  background: linear-gradient(to left, #1cb5e0, #000046, #1cb5e0);
+  border-radius: 30px / 25px;
+  position: relative;
+  left: 60px;
+  top: 70px;
 }
 
 .robot-eye-right {
+  width: 120px;
+  height: 110px;
+  background: radial-gradient(circle, #dd1818, #333333);
+  border-radius: 100px;
+  position: relative;
+  left: 360px;
+  bottom: 80px;
 }
 
 .robot-ear-left {
+  width: 90px;
+  height: 130px;
+  border-radius: 50px;
+  background: linear-gradient(
+    to left,
+    rgba(62, 81, 81, 0),
+    rgba(157, 197, 202, 1)
+  );
+  border-radius: 50px;
+  position: relative;
+  right: 75px;
+  bottom: 280px;
+  z-index: 1;
 }
 
 .robot-ear-right {
+  width: 120px;
+  height: 130px;
+  background: linear-gradient(
+    to right,
+    rgba(62, 81, 81, 0),
+    rgba(157, 197, 202, 1)
+  );
+  border-radius: 50px;
+  position: relative;
+  left: 580px;
+  bottom: 400px;
+  z-index: 2;
 }
 
 .robot-nose {
+  width: 90px;
+  height: 90px;
+  background-image: url(https://www.shutterstock.com/image-photo/teenagers-nose-close-260nw-521109745.jpg);
+  background-size: 200%;
+  background-position: center;
+  border-radius: 50px;
+  position: fixed;
+  left: 40%;
+  bottom: 30%;
 }
 
 .robot-teeth {
+  display: flex;
+  flex-wrap: wrap;
+  width: 330px;
+  height: 100px;
+  background: red;
+  border-radius: 3px;
+  position: relative;
+  left: 22%;
+  bottom: 234px;
 }
 
 .robot-tooth {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 50px solid teal;
+  margin-right: 5px;
+}
+
+.robot-tooth-bottom {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid purple;
+  margin-right: 5px;
 }
 
 .robot-hair-style {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+  width: 580px;
+  height: 80px;
+  background: linear-gradient(to top, #3e5151, #decba4);
+  border-radius: 60px;
+  position: absolute;
+  top: -60px;
 }
 
 .robot-hair-one {
+  width: 30%;
+  height: 50px;
+  background: repeating-linear-gradient(
+    90deg,
+    #000000,
+    #000000 5px,
+    hwb(65 20% 0%) 5px,
+    hwb(65 20% 0%) 10px
+  );
 }
 
 .robot-hair-two {
+  width: 60%;
+  height: 50px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgb(255, 51, 51),
+    rgb(255, 51, 51) 5px,
+    #000000 5px,
+    #000000 10px
+  );
 }
 
 .robot-hair-three {
+  width: 10%;
+  height: 50px;
+  background: linear-gradient(to top, #3e5151, #09ff00);
+}
+
+.antena {
+  position: relative;
+  bottom: 50vh;
+  left: 50vw;
+  width: 5px;
+  height: 250px;
+  background-color: black;
+  z-index: 1;
+}
+
+.antena-base {
+  position: relative;
+  width: 20px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: black;
+  top: 250px;
+  right: 8px;
+}
+
+.antena-tip {
+  position: relative;
+  bottom: 10px;
+  right: 10px;
+  display: block;
+  width: 26px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
 }
