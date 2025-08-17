@@ -24,6 +24,8 @@
   position: relative;
   left: 60px;
   top: 70px;
+  transform-origin: center;
+  animation: blink 2s linear infinite alternate;
 }
 
 .robot-eye-right {
@@ -34,6 +36,8 @@
   position: relative;
   left: 360px;
   bottom: 80px;
+  opacity: 0.5;
+  animation: eye 5s infinite alternate-reverse;
 }
 
 .robot-ear-left {
@@ -50,8 +54,11 @@
   right: 75px;
   bottom: 280px;
   z-index: 1;
+  transition: all 2s linear;
 }
-
+.robot-ear-left:hover {
+  transform: translateX(-100px);
+}
 .robot-ear-right {
   width: 120px;
   height: 130px;
@@ -65,6 +72,9 @@
   left: 580px;
   bottom: 400px;
   z-index: 2;
+  animation-name: right-ear-slide;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 }
 
 .robot-nose {
@@ -74,9 +84,10 @@
   background-size: 200%;
   background-position: center;
   border-radius: 50px;
-  position: fixed;
+  position: relative;
   left: 40%;
   bottom: 30%;
+  animation: nose 0.5s ease-in-out infinite alternate;
 }
 
 .robot-teeth {
@@ -88,7 +99,8 @@
   border-radius: 3px;
   position: relative;
   left: 22%;
-  bottom: 234px;
+  bottom: 300px;
+  animation: bite 3s infinite alternate-reverse;
 }
 
 .robot-tooth {
@@ -98,6 +110,7 @@
   border-right: 25px solid transparent;
   border-top: 50px solid teal;
   margin-right: 5px;
+  animation: chew 0.5s linear infinite alternate;
 }
 
 .robot-tooth-bottom {
@@ -107,6 +120,7 @@
   border-right: 25px solid transparent;
   border-bottom: 50px solid purple;
   margin-right: 5px;
+  animation: chew 0.5s linear infinite alternate-reverse;
 }
 
 .robot-hair-style {
@@ -119,6 +133,7 @@
   border-radius: 60px;
   position: absolute;
   top: -60px;
+  animation: style 3s linear infinite;
 }
 
 .robot-hair-one {
@@ -131,6 +146,7 @@
     hwb(65 20% 0%) 5px,
     hwb(65 20% 0%) 10px
   );
+  animation: hair-wide 3s linear forwards;
 }
 
 .robot-hair-two {
@@ -143,18 +159,22 @@
     #000000 5px,
     #000000 10px
   );
+  transform-origin: bottom;
+  animation: hair-tall 3s linear forwards;
 }
 
 .robot-hair-three {
   width: 10%;
   height: 50px;
-  background: linear-gradient(to top, #3e5151, #09ff00);
+  background-color: #09ff00;
+  border-radius: 50px;
+  animation: spin 3s linear infinite;
 }
 
 .antena {
   position: relative;
-  bottom: 50vh;
-  left: 50vw;
+  bottom: 550px;
+  left: 500px;
   width: 5px;
   height: 250px;
   background-color: black;
@@ -180,4 +200,157 @@
   height: 40px;
   background-color: white;
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: colors 5s linear infinite;
+}
+
+@keyframes eye {
+  from {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes right-ear-slide {
+  0% {
+    left: 580px;
+    bottom: 400px;
+  }
+  15% {
+    left: 580px;
+    bottom: 120px;
+  }
+  50% {
+    left: -90px;
+    bottom: 120px;
+  }
+  75% {
+    left: -90px;
+    bottom: 630px;
+  }
+  85% {
+    left: 580px;
+    bottom: 630px;
+  }
+  100% {
+    left: 580px;
+    bottom: 400px;
+  }
+}
+
+@keyframes left-ear-slide {
+  0% {
+    right: 75px;
+    bottom: 280px;
+  }
+  100% {
+    right: 145px;
+    bottom: 280px;
+  }
+}
+
+@keyframes blink {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes nose {
+  from {
+    transform: rotate(-50deg);
+  }
+  to {
+    transform: rotate(50deg);
+  }
+}
+
+@keyframes bite {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes chew {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes style {
+  0% {
+    top: -60px;
+  }
+  50% {
+    top: -80px;
+  }
+  100% {
+    top: -60px;
+  }
+}
+@keyframes hair-wide {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(1.5);
+  }
+}
+@keyframes hair-tall {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(3);
+  }
+}
+@keyframes colors {
+  0% {
+    background: red;
+  }
+  16% {
+    background: orange;
+  }
+  33% {
+    background: yellow;
+  }
+  50% {
+    background: green;
+  }
+  66% {
+    background: blue;
+  }
+  83% {
+    background: indigo;
+  }
+  100% {
+    background: violet;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

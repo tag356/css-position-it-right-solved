@@ -1,0 +1,31 @@
+https://github.com/tag356/css-position-it-right-solved.git
+
+
+
+
+[x] Antena
+  [x] Antena tip
+  [x] Antena
+[x] Hair
+  [x] Hair 1
+  [x] Hair 2
+  [x] Hair 3
+[x] Teeth
+  [x] Tooth (top)
+  [x] Bottom Teeth
+[x] Nose
+[x] Ears
+  [x] right
+  [x] left
+[x] Eyes
+  [x] right
+  [x] left
+
+
+[x] Animation with rotation is shown.
+[x] Animation with disappearing/appearing is shown.
+[x] Animation with changing dimensions is shown.
+[x] Animation with movement around some position is shown.
+[x] Animation on object hover event is shown.
+[x] Animation with color changing is shown.
+[x] Every facial feature item except for the face shape is animated.
